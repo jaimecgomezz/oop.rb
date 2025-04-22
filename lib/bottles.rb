@@ -1,16 +1,25 @@
-class Bottles 
-  def self.song(start,finish)     
-       start.downto(finish) do |verseNumber|
-           puts writeVerse(verseNumber) 
-       end        
+class Bottles
+
+  def song
+      verses(99,0)
   end
 
-  def self.writeVerse(number)
+  def verses(start,finish)
+      result = []
+      
+      start.downto(finish) do |number| 
+        result << verse(number)
+      end
+      
+      result.join("\n")
+  end
+
+  def verse(number)
       case number
       when 0 
         "No more bottles of beer on the wall, " +
         "no more bottles of beer.\n" +
-        "Go to a the store and buy some more, " +
+        "Go to the store and buy some more, " +
         "99 bottles of beer on the wall.\n"
       when 1
         "1 bottle of beer on the wall, " +
@@ -31,6 +40,6 @@ class Bottles
   end
 end
 
-Bottles.song(99,0)
+
 
 

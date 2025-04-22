@@ -3,8 +3,8 @@ class Bottles
     verses(99, 0)
   end
 
-  def verses(hi, lo)
-    hi.downto(lo).map { |n| verse(n) }.join("\n")
+  def verses(starting, ending)
+    starting.downto(ending).map { |n| verse(n) }.join("\n")
   end
 
   def verse(n)
@@ -24,3 +24,9 @@ class Bottles
       " of beer on the wall.\n"
   end
 end
+
+
+
+bottles = Bottles.new
+puts "Prueba"
+puts bottles.verses(99, 0)

@@ -1,9 +1,12 @@
-def person_formatter_nested(person,blk)
-   blk.call(person)
+require 'pry'
+
+def person_formatter_nested(person)
+   yield person
 end
 
 def person_formatter(person,blk)
-   person_formatter_nested(person,blk)
+  #binding pry
+  person_formatter_nested(person,&blk)
 end
 
 def person_generator(name, age, &blk)
